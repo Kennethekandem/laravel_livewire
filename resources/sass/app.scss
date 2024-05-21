@@ -1,0 +1,23 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+body {
+    color: green !important;
+    background-color: #fff !important;
+}
+
+.centered-div {
+    justify-self: center;
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+    border-left: 2px solid grey;
+    border-right: 3px solid grey;
+    padding: 10px;
+}
