@@ -33,3 +33,12 @@ body {
 .blog-actions span {
     font-size: medium;
 }
+
+small {
+    font-size: .675em !important;
+    color: #908e8e
+}
+
+.blog-card {
+    height: 200px !important;
+}

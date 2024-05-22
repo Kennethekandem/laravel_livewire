@@ -22,27 +22,34 @@
                     </form>
                 </div>
 
+                
+
                 <div class="col-12 mt-5 justify-content-center blogs">
-                    <h3 class="mt-3">Total Blogs <span class="badge badge-dark" style="background: black">2</span></h3>
+                    <h3 class="mt-3">Total Blogs <span class="badge badge-dark" style="background: black">{{ $count }}</span></h3>
 
                     <div class="row mt-4">
-                        <div class="col-sm-6">
-                            <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Uk tour - Day #5</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <div class="row">
-                                    <div class="col-3 blog-actions">
-                                        <ion-icon name="heart"></ion-icon> <span>2</span>
-                                    </div>
-                                    <div class="col-3 blog-actions">
-                                        <ion-icon name="heart-dislike-outline"></ion-icon> <span>4</span>
+                        @foreach ($blogs as $blog)
+                            <div class="col-sm-6">
+                                <div class="card blog-card mb-5">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ $blog->title}} - <small>{{ date('d-m-Y', strtotime($blog->created_at)) }}</small></h5>
+                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                        <div class="row">
+                                            <div class="col-3 blog-actions">
+                                                <ion-icon name="heart"></ion-icon> <span>2</span>
+                                            </div>
+                                            <div class="col-3 blog-actions">
+                                                <ion-icon name="heart-dislike-outline"></ion-icon> <span>4</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            </div>
+                        @endforeach
+                        <div class="d-flex">
+                            {!! $blogs->links() !!}
                         </div>
-                        <div class="col-sm-6">
+                        {{-- <div class="col-sm-6">
                             <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Invitation to lunch</h5>
@@ -57,7 +64,7 @@
                                 </div>
                             </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
            </div>
