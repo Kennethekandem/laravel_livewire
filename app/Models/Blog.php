@@ -13,7 +13,7 @@ class Blog extends Model
     protected $table = 'blogs';
 
 
-    private $fillables = [
+    protected $fillable = [
         'title',
         'description',
         'likes',
