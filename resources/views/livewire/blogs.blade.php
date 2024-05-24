@@ -10,16 +10,7 @@
                     <h1 class="logo pl-5"><i>Lucy Bs</i></h1>
                 </div>
                 <div class="col-6  d-flex justify-content-end  align-content-end pt-3">
-                    <form class="form-inline">
-                        <div class="row">
-                            <div class="col-8 p-0 m-0">
-                                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                            </div>
-                            <div class="col-4 p-0 m-0 justify-content-end">
-                                <button class="btn p-background my-sm-0" type="submit">Search</button>
-                            </div>
-                        </div>
-                    </form>
+                    <livewire:search />
                 </div>
 
                 
@@ -34,7 +25,7 @@
                         </div>
                     </div>
 
-                    <div class="row mt-4" wire:poll>
+                    <div class="row mt-4">
                         @foreach ($blogs as $blog)
                             <div class="col-sm-6">
                                 <div class="card blog-card mb-5">
