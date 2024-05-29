@@ -13,7 +13,7 @@
                     <livewire:search />
                 </div>
 
-                
+                <livewire:form-validate />
 
                 <div class="col-12 mt-5 justify-content-center blogs">
                     <div class="row">

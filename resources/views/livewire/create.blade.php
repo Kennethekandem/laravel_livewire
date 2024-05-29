@@ -7,8 +7,13 @@
     <form wire:submit.prevent="create">
         <div class="mb-3">
             <label for="create-title" class="form-label">What's the title?</label>
-            <input type="text" wire:model="title" class="form-control" id="create-title">
-            @error('title') <span class="error">{{ $message }}</span> @enderror
+            <input type="text" wire:model="title" wire:dirty.class="border border-success" class="form-control" id="create-title">
+            @error('title') 
+            <div class="alert alert-primary" role="alert">
+              <span class="error">{{ $message }}</span> 
+            </div>
+            @enderror
+            {{-- @error('title') <span class="error">{{ $message }}</span> @enderror --}}
         </div>
         <div class="mb-3">
             <label for="create-description" class="form-label">Share thoughts</label>

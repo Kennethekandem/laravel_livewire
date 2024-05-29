@@ -1,6 +1,6 @@
 <div>
     <div class="row">
-        <div class="col-8 p-0 m-0">
+        <div class="col-12 p-0 m-0">
             <input wire:model.live="search" class="form-control" type="text" placeholder="Search" aria-label="Search">
         </div>
         {{-- <div class="col-4 p-0 m-0 justify-content-end">
@@ -8,15 +8,16 @@
         </div> --}}
     </div>
 
-    <div>
-        <p>this is content</p>
+    {{-- {{ }} --}}
+    @if($search)
+        <div>
 
-        {{ $search }}
-        @forelse($searched as $blog)
-            {{ $blog->title}}
-        @empty
-            {{ __($empty)}}
-        @endforelse
-    </div>
+            @forelse($searched as $blog)
+                {{ $blog->title}} <br>
+            @empty
+                {{ __($empty)}}
+            @endforelse
+        </div>
+    @endif
     
 </div>
