@@ -25,22 +25,30 @@ class Blogs extends Component
 
     public function like($id) {
         $blog = Blog::where('id', $id)->first();
-        print($blog);
-        var_dump($blog);
+        $blog->update([
+            'like' => $blog->likes++
+        ]);
+        $blog->save();
+        return $blog;
     }
 
     public function dislike($id) {
-
+        $blog = Blog::where('id', $id)->first();
+        $blog->update([
+            'dislike' => $blog->dislikes++
+        ]);
+        $blog->save();
+        return $blog;
     }
 
     public function countReaction($type, $id) {
         $value = '';
         switch ($type) {
-            case 'like':
-                $value = 'like';
+            case 'likes':
+                $value = 'likes';
                 break;
-            case 'dislike':
-                $value = 'dislike';
+            case 'dislikes':
+                $value = 'dislikes';
                 break;
             default:
                 $value = '';
