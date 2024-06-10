@@ -10,7 +10,15 @@
                     <h1 class="logo pl-5"><i>Lucy Bs</i></h1>
                 </div>
                 <div class="col-6  d-flex justify-content-end  align-content-end pt-3">
-                    <livewire:search />
+                    {{-- <livewire:search /> --}}
+                    <div class="row">
+                        <div class="col-12 p-0 m-0">
+                            <input wire:model.live="search" class="form-control" type="text" placeholder="Search" aria-label="Search">
+                        </div>
+                        {{-- <div class="col-4 p-0 m-0 justify-content-end">
+                            <button class=`"btn p-background my-sm-0" type="submit">Search</button>
+                        </div> --}}
+                    </div>
                 </div>
 
                 <livewire:form-validate />
@@ -34,10 +42,16 @@
                                         <p class="card-text">{{ $blog->description }}</p>
                                         <div class="row">
                                             <div class="col-2 blog-actions">
-                                                <ion-icon name="heart"></ion-icon> <span>{{ $blog->likes }}</span>
+                                                {{-- <i class="fa-solid fa-address-book"></i> --}}
+                                                @if($blog->likes > 0)
+                                                    <span><i class="fa-solid fa-heart"></i><span>{{ $blog->likes }}</span></span>
+                                                @else
+                                                    <span type="button" wire:click="like({{ $blog->id}})"><i class="fa-regular fa-heart"></i><span>{{ $blog->likes }}</span></span>
+                                                @endif
+                                                {{-- <ion-icon name="heart"></ion-icon> <span>{{ $blog->likes }}</span> --}}
                                             </div>
                                             <div class="col-2 blog-actions">
-                                                <ion-icon name="heart-dislike-outline"></ion-icon> <span>{{ $blog->dislikes }}</span>
+                                                <span><i class="fa-solid fa-thumbs-down"></i><span>{{ $blog->dislikes }}</span></span>
                                             </div>
                                         </div>
                                     </div>
