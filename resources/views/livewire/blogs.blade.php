@@ -7,7 +7,7 @@
         <div class="col-7 centered-div pb-4">
            <div class="row mt-2 p-2">
                 <div class="col-6">
-                    <h1 class="logo pl-5"><i>Lucy Bs</i></h1>
+                    <h1 class="logo pl-5"><i>☁️</i></h1>
                 </div>
                 <div class="col-6  d-flex justify-content-end  align-content-end pt-3">
                     {{-- <livewire:search /> --}}

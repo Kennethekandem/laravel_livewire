@@ -28,6 +28,6 @@ class Create extends Component
             'likes' => 0,
             'dislikes' => 0
         ]);
-        return true;
+        return redirect('/');
     }
 }

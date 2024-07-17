@@ -14,6 +14,7 @@ class Blogs extends Component
     protected $queryString = ["search"];
     public $likes = 0;
     public $dislikes = 0;
+    public $listeners = ['refreshBlogs', 'render'];
 
     public function render()
     {
